@@ -87,6 +87,14 @@
       "courseId": "_iL775a",
       "birthdate": "1995-02-23",
       "id": 3
+    },
+    {
+      "name": "Armin Grebic",
+      "courseId": "_iL775j",
+      "email": "ahoafh@dskjhfb.com",
+      "birthdate": "2024-12-10T23:00:00.000Z",
+      "notifications": false,
+      "id": 4
     }
   ]
 }
