@@ -4,48 +4,54 @@
         <div class="form-column-main">
           <div class="card">
             <div class="card-content">
+              <!-- Name Field -->
               <div class="input-field">
                 <label class="input-label">Name</label>
                 <input class="text-input" matInput placeholder="Name" formControlName="name">
+                <div *ngIf="registrationForm.get('name')?.invalid && (registrationForm.get('name')?.touched || registrationForm.get('name')?.dirty)">
+                  <small *ngIf="registrationForm.get('name')?.hasError('required')">Name is required.</small>
+                </div>
               </div>
   
+              <!-- Email Field -->
               <div class="input-field">
                 <label class="input-label">Email</label>
                 <input class="text-input" matInput placeholder="Email" formControlName="email">
+                <div *ngIf="registrationForm.get('email')?.invalid && (registrationForm.get('email')?.touched || registrationForm.get('email')?.dirty)">
+                  <small *ngIf="registrationForm.get('email')?.hasError('required')">Email is required.</small>
+                  <small *ngIf="registrationForm.get('email')?.hasError('email')">Invalid email format.</small>
+                </div>
               </div>
   
+              <!-- Date of Birth Field -->
               <div class="input-field">
                 <label class="input-label">Date of Birth</label>
                 <mat-form-field>
                   <input
                     matInput
                     [matDatepicker]="birthPicker"
-                    placeholder="TT/MM/JJJJ"
+                    placeholder="MM/DD/YYYY"
                     formControlName="birthdate">
                   <mat-datepicker-toggle matIconSuffix [for]="birthPicker"></mat-datepicker-toggle>
                   <mat-datepicker #birthPicker></mat-datepicker>
                 </mat-form-field>
+                <div *ngIf="registrationForm.get('birthdate')?.invalid && (registrationForm.get('birthdate')?.touched || registrationForm.get('birthdate')?.dirty)">
+                  <small *ngIf="registrationForm.get('birthdate')?.hasError('required')">Date of Birth is required.</small>
+                </div>
               </div>
   
+              <!-- Course Selection -->
               <div class="input-field">
-                <label class="input-label">Choose a course date</label>
-                <mat-form-field>
-                  <input
-                    matInput
-                    [matDatepicker]="coursePicker"
-                    placeholder="TT/MM/JJJJ">
-                  <mat-datepicker-toggle matIconSuffix [for]="coursePicker"></mat-datepicker-toggle>
-                  <mat-datepicker #coursePicker></mat-datepicker>
-                </mat-form-field>
-              </div>
-  
-              <div class="input-field">
-                <label class="input-label">Select</label>
+                <label class="input-label">Select Course</label>
                 <select class="dropdown" formControlName="courseId">
+                  <option value="">Select a course</option>
                   <option *ngFor="let course of storeService.courses" [value]="course.id">
                     {{ course.name }}, {{ course.instructor }}
                   </option>
                 </select>
+                <div *ngIf="registrationForm.get('courseId')?.invalid && (registrationForm.get('courseId')?.touched || registrationForm.get('courseId')?.dirty)">
+                  <small>Course selection is required.</small>
+                </div>
               </div>
             </div>
           </div>
@@ -60,7 +66,7 @@
                 <p>Sign up for the newsletter!</p>
               </div>
               <br>
-              <button class="submit-button" type="submit">Submit</button>
+              <button class="submit-button" type="submit" [disabled]="registrationForm.invalid">Submit</button>
             </div>
           </div>
         </div>

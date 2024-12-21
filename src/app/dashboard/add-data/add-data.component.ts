@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StoreService } from '../../shared/store.service';
 import { BackendService } from '../../shared/backend.service';
 
@@ -15,14 +15,14 @@ export class AddDataComponent implements OnInit {
 
 
   constructor(private formbuilder: FormBuilder, public storeService: StoreService, private backendService: BackendService) { }
-  public registrationForm: any;
+  public registrationForm!: FormGroup;
 
 
   ngOnInit(): void {
     this.registrationForm = this.formbuilder.group({
-      name: ['', [Validators.required]],
+      name: ['', [Validators.required, Validators.minLength(3)]],
       courseId: ['', Validators.required],
-      email: ['', [Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
       birthdate: [null, Validators.required],
       notifications: [false],
     })

@@ -138,4 +138,17 @@ body {
       width: 100%;
     }
   }
+
+  input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border: 2px solid red; /* Dicke rote Umrandung */
+  border-radius: 4px; /* Abgerundete Ecken */
+}
+
+input.ng-valid.ng-touched,
+select.ng-valid.ng-touched {
+  border: 2px solid green; /* Optionale grüne Umrandung für gültige Felder */
+  border-radius: 4px;
+}
+
   
