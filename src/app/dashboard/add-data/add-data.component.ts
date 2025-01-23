@@ -3,18 +3,23 @@ import { SharedModule } from '../../shared/shared.module';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StoreService } from '../../shared/store.service';
 import { BackendService } from '../../shared/backend.service';
+import { MY_DATE_FORMATS } from '../../date-formats';
+import { DateAdapter } from '@angular/material/core';
 
 @Component({
   selector: 'app-add-data',
   standalone: true,
   imports: [SharedModule],
   templateUrl: './add-data.component.html',
-  styleUrls: ['./add-data.component.css']
+  styleUrls: ['./add-data.component.css'],
+  providers: [{ provide: MY_DATE_FORMATS, useValue: MY_DATE_FORMATS }]
 })
 export class AddDataComponent implements OnInit {
 
 
-  constructor(private formbuilder: FormBuilder, public storeService: StoreService, private backendService: BackendService) { }
+  constructor(private formbuilder: FormBuilder, public storeService: StoreService, private backendService: BackendService, private dateAdapter: DateAdapter<any>) { 
+    this.dateAdapter.setLocale('de');
+  }
   public registrationForm!: FormGroup;
 
 
@@ -23,7 +28,7 @@ export class AddDataComponent implements OnInit {
       name: ['', [Validators.required, Validators.minLength(3)]],
       courseId: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      birthdate: [null, Validators.required],
+      birthdate: ['', Validators.required],
       notifications: [false],
     })
   }

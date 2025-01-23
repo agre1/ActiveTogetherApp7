@@ -26,15 +26,20 @@ export class BackendService {
       }
     };
 
-    this.http.get<Registration[]>(`http://localhost:5000/registrations?_expand=course&_page=${page}&_limit=2`, options).subscribe(data => {
+    this.http.get<Registration[]>(`http://localhost:5000/registrations?_expand=course&_page=${page}&_limit=50`, options).subscribe(data => {
       this.storeService.registrations = data.body!;
       this.storeService.registrationTotalCount = Number(data.headers.get('X-Total-Count'));
     });
   }
 
   public addRegistration(registration: any, page: number) {
+    registration.registrationDate = new Date().toISOString();
     this.http.post('http://localhost:5000/registrations', registration).subscribe(_ => {
       this.getRegistrations(page);
-    })
+    });
   }
+
+  public deleteRegistration(registrationId: string, page: number) {
+    return this.http.delete(`http://localhost:5000/registrations/${registrationId}`)
+    };
 }

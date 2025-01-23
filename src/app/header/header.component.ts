@@ -12,4 +12,10 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
   public title: string = 'Stay Active, Stay Together';
   public imagePath: string = "./../assets/images/sport.jpeg";
+
+  toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
 }
+
+

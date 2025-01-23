@@ -30,7 +30,7 @@
                   <input
                     matInput
                     [matDatepicker]="birthPicker"
-                    placeholder="MM/DD/YYYY"
+                    placeholder="dd.MM.yyyy"
                     formControlName="birthdate">
                   <mat-datepicker-toggle matIconSuffix [for]="birthPicker"></mat-datepicker-toggle>
                   <mat-datepicker #birthPicker></mat-datepicker>
@@ -66,7 +66,7 @@
                 <p>Sign up for the newsletter!</p>
               </div>
               <br>
-              <button class="submit-button" type="submit" [disabled]="registrationForm.invalid">Submit</button>
+              <button class="submit-button" type="submit" [disabled]="registrationForm.invalid">Register now!</button>
             </div>
           </div>
         </div>

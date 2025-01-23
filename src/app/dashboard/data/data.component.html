@@ -2,6 +2,12 @@
   <div class="row mb-4">
     <div class="col-12">
       <h2>Kurse</h2>
+      <label for="filterPublicTransport">Öffentlich erreichbar: </label>
+      <select class="publictransport"id="filterPublicTransport" [(ngModel)]="filterPublicTransport" (change)="applyFilter()">
+        <option value="all">Alle</option>
+        <option value="true">Ja</option>
+        <option value="false">Nein</option>
+      </select>
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
@@ -42,6 +48,10 @@
             <th>Name</th>
             <th>Geburtsdatum</th>
             <th>Kurs</th>
+            <th (click)="sortRegistrations('registrationDate')">Anmeldedatum
+              <span *ngIf="sortDirection === 'asc'">&#9650;</span>
+              <span *ngIf="sortDirection === 'desc'">&#9660;</span>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -49,6 +59,13 @@
             <td>{{ registration.name }}</td>
             <td>{{ registration.birthdate | date: 'dd.MM.yyyy' }}</td>
             <td>{{ registration.course.name }}</td>
+            <td>{{ registration.registrationDate | date: 'dd.MM.yyyy' }}</td>
+            <td class="relative">
+              <button (click)="onDeleteRegistration(registration.id)" [disabled]="loading[registration.id]" class="delete-button">Abmelden</button>
+              <div *ngIf="loading[registration.id]" class="loading-spinner-overlay">
+                <div class="loading-spinner"></div>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>

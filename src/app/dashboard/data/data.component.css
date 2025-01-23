@@ -80,12 +80,12 @@ body {
   }
   
   .pagination button.active {
-    background: #007bff;
+    background: linear-gradient(120deg, #fda085, #f6d365);
     color: white;
   }
   
   .pagination button:hover {
-    background: #007bff;
+    background: linear-gradient(120deg, #fda085, #f6d365);
     color: white;
   }
   
@@ -100,5 +100,61 @@ body {
     .pagination {
       flex-wrap: wrap;
     }
+  }
+
+  .relative {
+    position: relative;
+  }
+  
+  .loading-spinner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #000;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .delete-button {
+    background: linear-gradient(120deg, #fda085, #f6d365);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .delete-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    background: rgb(255, 0, 0);
+  }
+
+  .publictransport {
+    background-color: #b8b8b894;
+    color: rgb(0, 0, 0);
+    margin-left: 1em;
+    border-radius: 5px;
+    font-size: 14px;
   }
   

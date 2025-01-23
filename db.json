@@ -71,70 +71,67 @@
   ],
   "registrations": [
     {
-      "id": 1,
-      "name": "Testuser",
-      "birthdate": "2024-11-13",
-      "courseId": "_iL775j"
-    },
-    {
-      "name": "Julia Schabasser",
-      "courseId": "_iL775i",
-      "birthdate": "1995-02-23",
-      "id": 2
-    },
-    {
-      "name": "Julia Schabasser",
-      "courseId": "_iL775a",
-      "birthdate": "1995-02-23",
-      "id": 3
-    },
-    {
-      "name": "Armin Grebic",
+      "name": "Armin",
       "courseId": "_iL775j",
-      "email": "ahoafh@dskjhfb.com",
-      "birthdate": "2024-12-10T23:00:00.000Z",
-      "notifications": false,
+      "email": "armin@grebic.at",
+      "birthdate": "2003-01-29T23:00:00.000Z",
+      "notifications": null,
+      "registrationDate": "2025-01-23T21:01:05.104Z",
       "id": 4
     },
     {
-      "name": "Armin Grebic",
-      "courseId": "_iL775j",
-      "email": "hoisdfhksjil@gmail.com",
-      "birthdate": "2024-11-11T23:00:00.000Z",
-      "notifications": false,
+      "name": "Sophia",
+      "courseId": "_iL775a",
+      "email": "sophia.meyer@example.com",
+      "birthdate": "2000-05-17T23:00:00.000Z",
+      "notifications": null,
+      "registrationDate": "2025-01-23T21:10:30.104Z",
       "id": 5
     },
     {
-      "name": "Armin Grebic",
-      "courseId": "_iL775j",
-      "email": "lkdsfhsdloikf@gmail.com",
-      "birthdate": "2024-12-10T23:00:00.000Z",
+      "name": "Liam",
+      "courseId": "_iL775i",
+      "email": "liam.schmidt@example.com",
+      "birthdate": "1998-07-12T23:00:00.000Z",
       "notifications": null,
+      "registrationDate": "2025-01-23T21:15:45.104Z",
       "id": 6
     },
     {
-      "name": "Armin grebic",
+      "name": "Emma",
       "courseId": "_iL775j",
-      "email": "lksdaddshfnbkjls@gmail.com",
-      "birthdate": "2023-10-10T22:00:00.000Z",
+      "email": "emma.bauer@example.com",
+      "birthdate": "2001-09-03T23:00:00.000Z",
       "notifications": null,
+      "registrationDate": "2025-01-23T21:20:50.104Z",
       "id": 7
     },
     {
-      "name": "Armin Grebic",
-      "courseId": "_iL775j",
-      "email": "jkdshfbjksdbf@gmail.com",
-      "birthdate": "2023-01-10T23:00:00.000Z",
+      "name": "Noah",
+      "courseId": "_iL775a",
+      "email": "noah.klein@example.com",
+      "birthdate": "2002-11-22T23:00:00.000Z",
       "notifications": null,
+      "registrationDate": "2025-01-23T21:25:15.104Z",
       "id": 8
     },
     {
-      "name": "Armin Grebic",
-      "courseId": "_iL775j",
-      "email": "fjoksdbfjkd@gmail.com",
-      "birthdate": "2003-01-29T23:00:00.000Z",
+      "name": "Mia",
+      "courseId": "_iL775i",
+      "email": "mia.fischer@example.com",
+      "birthdate": "1999-04-10T23:00:00.000Z",
       "notifications": null,
+      "registrationDate": "2025-01-23T21:30:00.104Z",
       "id": 9
+    },
+    {
+      "name": "Test",
+      "courseId": "_iL775j",
+      "email": "test@test.com",
+      "birthdate": "2025-01-15T23:00:00.000Z",
+      "notifications": false,
+      "registrationDate": "2025-01-23T22:29:03.466Z",
+      "id": 10
     }
   ]
 }
