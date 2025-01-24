@@ -24,10 +24,10 @@ export class DataComponent implements OnInit {
   }
 
   applyFilter(){
-    if (this.filterPublicTransport === 'all') {
+    if (this.filterPublicTransport == 'all') {
       this.filteredCourses = this.storeService.courses;
     } else {
-      const isPublicTransport = this.filterPublicTransport === 'true';
+      const isPublicTransport = this.filterPublicTransport == 'true';
       this.filteredCourses = this.storeService.courses.filter(course => course.eventLocation.venueByPublicTansport === isPublicTransport);
   }
 }
